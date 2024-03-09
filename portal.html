@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #443388, #999999, #4d4d4d, #d1bd05);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        header {
+            width: 100%;
+            background-color: #28a745;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        .logo {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
+        h1 {
+            display: inline-block;
+            margin: 0;
+        }
+        
+        .welcome {
+            font-size: 24px;
+            animation: pulse 2s infinite alternate;
+        }
+        
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        h2 {
+            margin-bottom: 30px;
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: linear-gradient(45deg, #f00, #0f0, #00f, #f00);
+            border-radius: 50%;
+            transition: width 0.3s ease, height 0.3s ease;
+            z-index: 0;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+        
+        footer {
+            width: 100%;
+            background-color: #28a745;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <h1>University Results Management System</h1>
+    </header>
+    <div class="welcome">Welcome to the Portal</div>
+    <div class="container">
+        <h2>Login Options</h2>
+        <div class="btn-container">
+            <a href="lecturer_login.html" class="btn"><span>Login as Lecturer</span></a>
+            <a href="student_login.html" class="btn"><span>Login as Student</span></a>
+        </div>
+    </div>
+    <footer>Metropolitan International University - All Rights Reserved</footer>
+</body>
+
+</html>
